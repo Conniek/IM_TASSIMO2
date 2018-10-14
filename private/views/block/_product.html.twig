@@ -1,0 +1,40 @@
+<div class="screen screen--5 product container  desktop-only">
+    {% for product in trad.products %}
+        <h2 class="product__title">{{ product.name }}</h2>
+        <h3 class="product__subtitle">{{ product.subtitle }}</h3>
+        <div class="product__container">
+            {% for lst in product.listes %}
+                <div class="product__item product__item--{{ loop.index }}">
+                    <a data-label=":{{ lst.title }}" data-event="TagEvent::Exit" target="_blank" href="{{ lst.url }}"
+                       class="product__item--img event"><img src="./img/{{ lst.img }}"
+                                                             title="{{ lst.title }}" alt="{{ lst.title }}"></a>
+                    <h3 class="product__item--title" style="color:{{ lst.color }}">{{ lst.title }}</h3>
+
+                    <a class=" event product__item--btn animated-button thar-two " data-label=":{{ lst.title }}" data-event="TagEvent::Exit"
+                       target="_blank" href="{{ lst.url }}">{{ product.btn }}</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
+
+
+<div class="screen screen--5 product container  no-desktop">
+    {% for product in trad.products %}
+        <h2 class="product__title">{{ product.name }}</h2>
+        <h3 class="product__subtitle">{{ product.subtitle }}</h3>
+        <div class="product__container" id="product_slider">
+            {% for lst in product.listes %}
+                <div class="product__item product__item--{{ loop.index }}">
+                    <a data-label=":{{ lst.title }}" data-event="TagEvent::Exit" target="_blank" href="{{ lst.url }}"
+                       class="product__item--img event"><img src="./img/{{ lst.img }}"
+                                                             title="{{ lst.title }}" alt="{{ lst.title }}"></a>
+                    <h3 class="product__item--title" style="color:{{ lst.color }}">{{ lst.title }}</h3>
+
+                    <a class=" event product__item--btn animated-button thar-two " data-label=":{{ lst.title }}" data-event="TagEvent::Exit"
+                       target="_blank" href="{{ lst.url }}">{{ product.btn }}</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>

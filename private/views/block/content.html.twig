@@ -1,0 +1,30 @@
+{# EXEMPLE PRODUCTS #}
+<div class="screen screen--1 exclusivite container">
+    <h2 class="exclusivite__title">{{ trad.exclusivite.title }}</h2>
+    <p class="exclusivite__parg">{{ trad.exclusivite.parg }}</p>
+
+    <span class="exclusivite__btn">{{ trad.exclusivite.cta }} </span>
+</div>
+
+<div class="screen screen--2 adv ">
+    <div class="adv__container container">
+        {% for adv in trad.advantages %}
+            <div class="adv__container--item  adv__container--item--{{ loop.index }}">
+                <h3 class="adv__container--item_title">{{ adv.title }}</h3>
+                <img src="./img/{{ adv.img }}" title="{{ adv.title }}" alt="{{ adv.title }}"  class="adv_item--ico pulse animated"  />
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% include "../block/_objectif.html.twig" %}
+{% include "../block/_product.html.twig" %}
+{% include "../block/_avis.html.twig" %}
+{% include "../block/_offres.html.twig" %}
+{% include "../block/marketing.html.twig" %}
+<div class="mentions container">
+    <p>{{ trad.mentions.txt }}</p>
+</div>
+
+

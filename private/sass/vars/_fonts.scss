@@ -1,0 +1,185 @@
+////
+/// @group Typos
+////
+
+@font-face {
+  font-family: 'Grota Sans Rd Black';
+  src: url('fonts/GrotaSansRd-Black.eot');
+  src: url('fonts/GrotaSansRd-Black.eot?#iefix') format('embedded-opentype'),
+  url('fonts/GrotaSansRd-Black.woff2') format('woff2'),
+  url('fonts/GrotaSansRd-Black.woff') format('woff'),
+  url('fonts/GrotaSansRd-Black.ttf') format('truetype'),
+  url('fonts/GrotaSansRd-Black.svg#GrotaSansRd-Black') format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Grota Sans Rd Bold';
+  src: url('fonts/GrotaSansRd-Bold.eot');
+  src: url('fonts/GrotaSansRd-Bold.eot?#iefix') format('embedded-opentype'),
+  url('fonts/GrotaSansRd-Bold.woff2') format('woff2'),
+  url('fonts/GrotaSansRd-Bold.woff') format('woff'),
+  url('fonts/GrotaSansRd-Bold.ttf') format('truetype'),
+  url('fonts/GrotaSansRd-Bold.svg#GrotaSansRd-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvenirNext-Medium';
+  src: url('fonts/AvenirNext-Medium.eot');
+  src: url('fonts/AvenirNext-Medium.woff2') format('woff2'),
+  url('fonts/AvenirNext-Medium.woff') format('woff'),
+  url('fonts/AvenirNext-Medium.ttf') format('truetype'),
+  url('fonts/AvenirNext-Medium.svg#AvenirNext-Medium') format('svg'),
+  url('fonts/AvenirNext-Medium.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Bold';
+    src: url('fonts/Gotham-Bold.eot');
+    src: url('fonts/Gotham-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Gotham-Bold.woff2') format('woff2'),
+        url('fonts/Gotham-Bold.woff') format('woff'),
+        url('fonts/Gotham-Bold.ttf') format('truetype'),
+        url('fonts/Gotham-Bold.svg#Gotham-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Black';
+    src: url('fonts/Gotham-Black.eot');
+    src: url('fonts/Gotham-Black.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Gotham-Black.woff2') format('woff2'),
+        url('fonts/Gotham-Black.woff') format('woff'),
+        url('fonts/Gotham-Black.ttf') format('truetype'),
+        url('fonts/Gotham-Black.svg#Gotham-Black') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Narrow';
+    src: url('fonts/GothamXNarrow-Black.eot');
+    src: url('fonts/GothamXNarrow-Black.eot?#iefix') format('embedded-opentype'),
+        url('fonts/GothamXNarrow-Black.woff2') format('woff2'),
+        url('fonts/GothamXNarrow-Black.woff') format('woff'),
+        url('fonts/GothamXNarrow-Black.ttf') format('truetype'),
+        url('fonts/GothamXNarrow-Black.svg#GothamXNarrow-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Book';
+    src: url('fonts/Gotham-Book.eot');
+    src: url('fonts/Gotham-Book.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Gotham-Book.woff2') format('woff2'),
+        url('fonts/Gotham-Book.woff') format('woff'),
+        url('fonts/Gotham-Book.ttf') format('truetype'),
+        url('fonts/Gotham-Book.svg#Gotham-Book') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir Next LT Pro';
+    src: url('fonts/AvenirNextLTPro-Bold.eot');
+    src: url('fonts/AvenirNextLTPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/AvenirNextLTPro-Bold.woff2') format('woff2'),
+        url('fonts/AvenirNextLTPro-Bold.woff') format('woff'),
+        url('fonts/AvenirNextLTPro-Bold.ttf') format('truetype'),
+        url('fonts/AvenirNextLTPro-Bold.svg#AvenirNextLTPro-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+
+/// typo de titrage
+$Gotham-Bold:  'Gotham Bold', sans-serif;
+$Gotham-Black: 'Gotham Black', sans-serif;
+$Gotham-Book : 'Gotham Book', sans-serif;
+
+/// typo de texte secondaire
+$t-title: 'Gotham Narrow', sans-serif;
+$t-text: 'AvenirNext-Medium', sans-serif;
+
+/// taille par defaut du texte (10px)
+$t-Gotham-Bold: 'Gotham-Bold', sans-serif;
+$t-Clarins-Regular: 'Clarins-Regular', sans-serif;
+$t-Clarins-Italic: 'Clarins-Italic', sans-serif;
+$t-Gotham-Book: 'Gotham-Book', sans-serif;
+$t-size-base: 62.5%;
+
+$guss-rem-baseline: 16px !default;
+
+@function rem($value, $baseline: $guss-rem-baseline) {
+  @if $value == 0 {
+    @return 0; // 0rem -> 0
+  }
+
+  @if type-of($value) == list {
+    $result: ();
+
+    @each $e in $value {
+      $result: append($result, rem($e, $baseline));
+    }
+
+    @return $result;
+  } @else {
+    @return if(type-of($value) == number and unit($value) == px, $value / $baseline * 1rem, $value);
+  }
+}
+
+@mixin rem($properties, $lheight) {
+  @each $property, $value in $properties {
+    @if (type-of($value) == number and $value != 0) {
+      // Turn unitless values into pixels
+      $value: if(unitless($value), $value * 1px, $value);
+    }
+
+    #{$property}: $value;
+    #{$property}: rem($value);
+  }
+}
+
+// Permet de convertir une taille px => vw
+@function vw($value, $baseline: $guss-rem-baseline) {
+  @if $value == 0 {
+    @return 0; // 0rem -> 0
+  }
+
+  @if type-of($value) == list {
+    $result: ();
+
+    @each $e in $value {
+      $result: append($result, rem($e, $baseline));
+    }
+
+    @return $result;
+  } @else {
+    @return if(type-of($value) == number and unit($value) == px, $value / $baseline * 5vw, $value);
+  }
+}
+
+/// declaration de la taille de typo ET de l'interlignage
+/// @param {absolute} $font-size - Taille de la police
+/// @param {px|em} $line-heigt - valeur de l'interligne
+/// @example
+/// .link {
+///   @include fonts(18, 24px);
+/// }
+/// @example
+/// .link {
+///   @include fonts(12, 1.4em);
+/// }
+@mixin fonts($font-size, $line-height) {
+  @include rem((font-size: $font-size));
+  line-height: $line-height;
+}

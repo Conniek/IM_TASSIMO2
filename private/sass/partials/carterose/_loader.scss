@@ -1,0 +1,175 @@
+$widthLoader: 50px;
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+
+.loader {
+  position: fixed;
+  background: $c-theme;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  text-align: center;
+  color: $c-theme;
+
+  &__header,
+  &__brand,
+  &__spinner-wrapper {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $c-theme;
+  }
+
+  &__header {
+    top: 10%;
+    width: 160px;
+  }
+
+  &__brand {
+    top: 50%;
+  }
+
+  &__spinner-wrapper {
+    bottom: 10%;
+    width: 30px;
+
+    img {
+      animation: spin 1s linear infinite;
+    }
+  }
+
+  &__spin {
+    position: absolute;
+    bottom: 5vw;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    width: $widthLoader;
+
+    &:before {
+      content: '';
+      display: block;
+      padding-top: 100%;
+    }
+  }
+
+  &__circular {
+    animation: rotate 2s linear infinite;
+    height: 100%;
+    transform-origin: center center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  &__path {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    stroke: $c-complement;
+    animation: dash 1.5s ease-in-out infinite;
+    stroke-linecap: round;
+  }
+
+  @media screen and (min-width: 1024px) {
+    &__header,
+    &__spinner-wrapper {
+      width: auto;
+    }
+  }
+
+  .airfrance {
+    @media screen and (min-width: 1024px) {
+      font-size: 8vw;
+    }
+
+    @media screen and (min-width: 1600px) {
+      font-size: 6vw;
+    }
+  }
+
+  .icon-logo-brand {
+    display: block;
+    margin-top: 3vw;
+    font-size: 50vw;
+    color: $c-complement;
+
+    @media screen and (min-width: 640px) {
+      font-size: 325px;
+    }
+
+    /*@media screen and (min-width: 640px) {
+      font-size: 33vw;
+    }
+
+    @media screen and (min-width: 1024px) {
+      font-size: 21vw;
+    }
+
+    @media screen and (min-width: 1600px) {
+      font-size: 13vw;
+    }*/
+  }
+
+  .carterose {
+    position: relative;
+    margin-top: 3vw;
+    display: inline-block;
+    min-width: 15vw;
+
+    .icon {
+      font-size: 12vw;
+      color: $c-complement;
+
+      @media screen and (min-width: 640px) {
+        font-size: 5vw;
+      }
+
+      &.icon-carte-rose-2,
+      &.icon-carte-rose-3 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      &.icon-carte-rose-2 {
+        color: $c-vp;
+      }
+
+      &.icon-carte-rose-3 {
+        opacity: .5;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotateZ(0deg) }
+  100% { transform: rotateZ(360deg) }
+}

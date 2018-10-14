@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ lang }}">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css">
+    {% include "../layout/meta.html.twig", with {'theme': config.theme, 'structure': config.structure} %}
+</head>
+<body>
+<!--HEADER-->
+{% if config.environment == 'development' %}
+    {% include "../block/header_dev.html.twig" %}
+{% endif %}
+
+{% include "../block/header.html.twig" %}
+<!--/HEADER-->
+
+<!--MAIN-->
+{% block language %}
+{% endblock %}
+
+{% import "../macros/macros.twig" as macros %}
+
+{% if config.theme != 'default' %}
+    {% include "../block/" ~ config.theme ~ "/loader.html.twig" %}
+{% else %}
+    {% include "../block/loader.html.twig" %}
+{% endif %}
+
+{% if config.structure != 'default' %}
+    {% include "../block/" ~ config.structure ~ "/content.html.twig" %}
+{% else %}
+    {% include "../block/content.html.twig" %}
+{% endif %}
+
+<!--/MAIN-->
+
+<!--FOOTER-->
+{% if config.theme != 'default' %}
+    {% include "../block/" ~ config.theme ~ "/footer.html.twig" %}
+{% else %}
+    {% include "../block/footer.html.twig" %}
+{% endif %}
+<!--/FOOTER-->
+
+<span class="lang" data-lang="{{ lang }}"></span>
+{% include "../layout/script.html.twig" %}
+</body>
+</html>

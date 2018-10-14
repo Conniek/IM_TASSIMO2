@@ -1,0 +1,116 @@
+.footer {
+  //@include container;
+  text-align: center;
+  font-size: rem(13px);
+  background: #000000;
+  color: #ffffff;
+  padding: 40px;
+
+  &__partnership {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &__item {
+    margin: 10px auto;
+    display: inline-block;
+
+    @include breakpoint($b-desk) {
+      margin: 20px;
+    }
+  }
+
+  &__copyright{
+    margin:20px auto;
+    color: #ffffff;
+    font-size: rem(12px);
+    font-family: Avenir Next, sans-serif;
+
+    @include breakpoint($b-desk) {
+      font-size: rem(13px);
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    vertical-align: middle;
+    height: 25px;
+
+    @include breakpoint($b-desk) {
+      height: 35px;
+    }
+
+    &--invite-de-marque{
+      height: 42px;
+      margin-right: 10px;
+
+      @include breakpoint($b-desk) {
+        height: 70px;
+        margin-right: 20px;
+      }
+
+    }
+  }
+
+  .icon-logo-vp {
+    font-size: 70px;
+    margin-left: 0;
+
+    @media screen and (min-width: 640px) {
+      margin-right: 3vw;
+    }
+
+    @media screen and (min-width: 1025px) {
+      margin-right: 0;
+    }
+  }
+
+  .icon-brand {
+    font-size: 60px;
+    position: relative;
+    top: 0;
+    left: -8vw;
+    margin-left: 4vw;
+
+    @media screen and (min-width: 321px) {
+      left: -2vw;
+    }
+
+    @media screen and (min-width: 1200px) {
+      margin-left: 2vw;
+    }
+  }
+
+  &__mentions {
+    margin-top: 20px;
+    @include breakpoint($b-desk) {
+      margin-top: 0;
+    }
+  }
+
+  &__presents {
+    font-size: 10px;
+    position: relative;
+    top: -25px;
+    margin-left: 5vw;
+
+    @media screen and (min-width: 640px) {
+      margin-left: 0;
+    }
+  }
+
+  &__presents,
+  .icon,
+  .mention {
+    opacity: 0.6;
+  }
+
+  .mention {
+    font-size: 12px;
+
+    &__project {
+      text-transform: uppercase;
+    }
+  }
+}

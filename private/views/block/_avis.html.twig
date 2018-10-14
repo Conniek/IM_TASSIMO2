@@ -1,0 +1,49 @@
+<div class="screen screen--4 avis">
+    <div class="avis__ico pulse animated"><img src="./img/tasse.png" title="tasse" ></div>
+    {% for obj in trad.avis %}
+        <h2 class="avis__title">{{ obj.name }}</h2>
+
+        <div class="avis__container">
+            <div class="avis__left  avis__left--{{ loop.index }}">
+                <div class="progress" data-percentage="90" >
+				<span class="progress-left">
+					<span class="progress-bar"></span>
+				</span>
+                    <span class="progress-right">
+					<span class="progress-bar"></span>
+				</span>
+                    <div class="progress-value">
+                        <div>
+                            99%
+                        </div>
+                    </div>
+                </div>
+                <h3 class="avis__left--title">{{ obj.subtitle }}</h3>
+            </div>
+
+            <div class="avis__right  avis__right--{{ loop.index }}">
+
+                {% for lst in obj.listes %}
+                    <div class="avis__right--item  avis__right--item--{{ loop.index }}">
+                        <div class="avis__right--rating">
+                            <input type="checkbox" id="st1" value="1" checked />
+                            <label for="st1"></label>
+                            <input type="checkbox" id="st2" value="2" checked />
+                            <label for="st2"></label>
+                            <input type="checkbox" id="st3" value="3" checked />
+                            <label for="st3"></label>
+                            <input type="checkbox" id="st4" value="4" checked />
+                            <label for="st4"></label>
+                            <input type="checkbox" id="st5" value="5" checked />
+                            <label for="st5"></label>
+                        </div>
+                        <div class="clearfix"></div>
+                        <p class="avis__right--item_txt">{{ lst.parg }}</p>
+                        <p class="avis__right--item_author">{{ lst.author }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <p class="avis__right--copyright">{{ obj.copyright }}</p>
+        </div>
+    {% endfor %}
+</div>

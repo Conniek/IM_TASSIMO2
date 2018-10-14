@@ -1,0 +1,16 @@
+<div class="screen screen--6 offres container">
+    <h2 class="offres__title">{{ trad.titleOffre }}</h2>
+    <div  id="slider_offre">
+        {% for ofr in trad.offres %}
+                    <div class="offres__item offres__item--{{ loop.index }}">
+                        <a data-label=":{{ ofr.title }}" data-event="TagEvent::Exit" target="_blank" href="{{ ofr.url }}"
+                           class="offres__item--img event"><img src="./img/{{ ofr.img }}"
+                                                                 title="{{ ofr.title }}" alt="{{ ofr.title }}"></a>
+                        <h3 class="offres__item--title" style="color: {{ ofr.color }}"  >{{ ofr.title }}</h3>
+                        <p class="offres__item--txt"  >{{ ofr.parg }}</p>
+                        <a class=" event offres__item--btn button bottom " data-label=":{{ ofr.title }}" data-event="TagEvent::Exit"
+                           target="_blank" href="{{ ofr.url }}">{{ ofr.btn }}</a>
+                    </div>
+        {% endfor %}
+    </div>
+</div>

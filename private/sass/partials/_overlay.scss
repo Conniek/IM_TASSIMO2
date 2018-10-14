@@ -1,0 +1,30 @@
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.overlay {
+  position: fixed;
+  z-index: 999;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, .85);
+  animation: fadein .3s;
+}
+
+.overlay-sup {
+  z-index: 9999 !important;
+}
+
+.overlay-body {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}

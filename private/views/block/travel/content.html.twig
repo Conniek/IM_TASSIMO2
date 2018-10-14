@@ -1,0 +1,73 @@
+<div class="scroool nchr"></div>
+<div class="from">
+    <p class="from__text">{{ trad.from.key1 }}</p>
+    <div class="from__filter">
+        <button class="from__btn event" data-event="TagEvent::Page" data-label="navigation" data-city data-src="#form-select"><span class="original">{{ trad.from.filter.select }}</span><img class="from__plus from__plus--original" src="img/plus.png" alt=""><img
+                    class="from__close" src="img/close.png" alt="">
+        </button>
+        <div class="from__select" id="form-select">
+            <p class="from__btn">{{ trad.from.filter.select }}<img class="from__plus" src="img/plus.png" alt=""></p>
+            {% for city in trad.from.depart %}
+                <p class="from__select-city event" data-event="TagEvent::Exit_{{ city }}"
+                   data-label="From:{{ city }}">{{ city }}</p>
+            {% endfor %}
+        </div>
+    </div>
+    <p class="from__text">{{ trad.from.key2 }}</p>
+</div>
+
+<div class="destinations">
+    {% for city in trad.cities %}
+        <div class="destination mask" id="dest_{{ city.title |replace({' ': '_'}) }}">
+            <div class="masked"></div>
+            <div class="destination__city">
+                <a data-city data-src="#city_{{ loop.index }}"><img class="destination__mea city_action event" src="img/travel/destination_0{{ loop.index }}.png" data-cityVal="{{ city.title |replace({' ': '_'}) }}" data-event="TagEvent::Page" data-label="navigation"></a>
+                <p class="destination__title">{{ city.title }}<span class="destination__price">A partir de {{ city.price }}</span>
+                </p>
+                <span class="destination__plus" data-city data-src="#city_{{ loop.index }}"><span class="city_action event" data-event="TagEvent::Page" data-label="navigation" data-cityVal="{{ city.title |replace({' ': '_'}) }}">+</span></span>
+                <div class="city__overlay" id="city_{{ loop.index }}">
+                    <div class="city__partner">
+                        <p class="city__partner-txt">
+                            {{ city.title }}
+                            <strong>A partir de {{ city.price }}</strong>
+                        </p>
+                    </div>
+                    <img class="city__bandeau"
+                         src="img/travel/destination_0{{ loop.index }}-01.png" alt="">
+                    <div class="city__intro">
+                        <div class="city__info">
+                            <p class="city__name">{{ city.title }}</p>
+                            <p class="city__date">Voyage entre le {{ city.dateStart }} et le {{ city.dateEnd }}</p>
+                        </div>
+                        <div class="city__price">
+                            <div class="city__price--1">
+                                <p class="city__price-number">Aller-simple dès<span>{{ city.price }}</span></p>
+                            </div>
+                            <div class="city__price--2">
+                                <p class="city__price-number">Voyagez en 1<sup>ère</sup><span>+ 14€</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="city__text">{{ city.text }}</p>
+                    <div class="city__picture">
+                        {% for destination in city.destinations %}
+                            <img class="city__picture-img"
+                                 src="img/travel/destination_0{{ loop.parent.loop.index }}_city_0{{ loop.index }}.png" alt="">
+                        {% endfor %}
+                    </div>
+                    <div class="city__footer">
+                        <p class="city__footer__text">Votre hiver toute en douceur</p>
+                        <p class="city__footer__other">Partez découvrir {{ city.name }}</p>
+                        <p class="city__footer__other2">J'y vais avec</p>
+                        <a class="city__footer__btn event" data-event="TagEvent::Exit_oui" data-label="Go:{{ city.name }}_oui"
+                           href="" id="lien_oui_{{ city.title |replace({' ': '_'}) }}"
+                           target="_blank"><img src="img/logo-oui.png" alt=""></a>
+                        <a class="city__footer__btn event" data-event="TagEvent::Exit_trainline" data-label="Go:{{ city.name }}_trainline"
+                           href="" id="lien_trainline_{{ city.title |replace({' ': '_'}) }}"
+                           target="_blank"><img src="img/logo-trainline.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

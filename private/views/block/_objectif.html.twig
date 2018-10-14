@@ -1,0 +1,20 @@
+<div class="screen screen--4 objectifs container">
+    {% for obj in trad.objectifs %}
+        <h2 class="objectifs__title">{{ obj.name }}</h2>
+        <div class="objectifs__container ">
+            {% for lst in obj.listes %}
+                <div class="objectifs__container--item  objectifs__container--item--{{ loop.index }}">
+                    <div class="img">
+                        <img src="./img/{{ lst.img }}" title="{{ lst.title }}" alt="{{ lst.title }}"  />
+                    </div>
+                    <h3 class="objectifs__container--item_title">{{ lst.title }}</h3>
+                    <p class="objectifs__container--item_txt desktop-only">{{ lst.parg }}</p>
+                    <div class="objectifs__container--item_txt no-desktop">
+                        <img src="./img/arrow.png" class="toggle-button" id="toggle--{{ loop.index }}" />
+                        <p class="toggle-content" id="content--{{ loop.index }}">{{ lst.parg }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,170 @@
+<script>
+    function getCookieID(sName) {
+        var cookContent = document.cookie, cookEnd, i, j;
+        var sName = sName + "=";
+
+        for (i=0, c=cookContent.length; i<c; i++) {
+            j = i + sName.length;
+            if (cookContent.substring(i, j) == sName) {
+                cookEnd = cookContent.indexOf(";", j);
+                if (cookEnd == -1) {
+                    cookEnd = cookContent.length;
+                }
+                return decodeURIComponent(cookContent.substring(j, cookEnd));
+            }
+        }
+        return null;
+    }
+</script>
+
+{% if config.modules.jquery %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% endif %}
+
+<!-- AniJS Core File -->
+<script src="js/vendors/anijs-min.js"></script>
+<!-- ScrollReveal Helper -->
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
+{% if config.modules.modernizr %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+{% endif %}
+{% if config.modules.detectizr %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/detectizr/2.2.0/detectizr.min.js"></script>
+{% endif %}
+{% if config.modules.waypoints %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+{% endif %}
+{% if config.modules.slick %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+{% endif %}
+{% if config.modules.fancybox %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
+{% endif %}
+
+
+
+
+{% if config.modules.adotmob %}
+    <script src="https://storage.data-vp.com/vp/t.js"></script>
+    <script src="https://cdn.data-vp.com/common/vpas.js"></script>
+
+    <script>
+        //RECUPERATION DE infoMEMBER
+        var infoMember = getCookieID('infoMember');
+
+        if( infoMember != null ) {
+            infoMember = infoMember.substr(4); // VALEUR FINAL
+            adotmob.init(infoMember, config.operation.code, config.operation.code + '_tracking')
+        }else {
+            adotmob.init(config.operation.code + '_member', config.operation.code, config.operation.code + '_tracking')
+        }
+    </script>
+{% endif %}
+
+<script>
+    var currentCountry = '{{ lang }}';
+    var ua = navigator.userAgent.toLowerCase();
+
+    var $_GET = function(param) {
+        var vars = {};
+        window.location.href.replace(location.hash, '').replace(
+            /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+            function (m, key, value) { // callback
+                vars[key] = value !== undefined ? value : '';
+            }
+        );
+
+        if (param) {
+            return vars[param] ? vars[param] : null;
+        }
+        return vars;
+    };
+
+
+
+    var getUrlParameter = function(param, defaultValue)  {
+        var vars = {};
+        window.location.href.replace( location.hash, '' ).replace(
+            /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+            function( m, key, value ) { // callback
+                vars[key] = value !== undefined ? value : '';
+            }
+        );
+
+        if ( param ) {
+            return vars[param] ? vars[param] : defaultValue;
+        }
+        return vars;
+    }
+
+    /********************* RECUPERER LES PROPRIETES MIXPANEL ****************************/
+
+    var mp_properties = getUrlParameter('mp_properties', null);
+    var propriet = [];
+
+    if(mp_properties) {
+        mp_properties = decodeURIComponent(mp_properties);
+        mp_properties = atob(mp_properties);
+        propriet = JSON.parse(mp_properties);
+    }
+
+    /*************************************************/
+
+    // Get browser type
+    var browserType;
+    var u = navigator.userAgent.toLowerCase();
+
+    if (u.indexOf("vp-iphone") > -1 || u.indexOf("vp-ipad") > -1 || u.indexOf("vp-android-smartphone") > -1) {
+
+        // Application VP
+        browserType = "Application Vente-privee";
+
+    } else if ($_GET('FromApp') && ($_GET('FromApp') == true || $_GET('FromApp') == 'true')) {
+
+        browserType = "FromApp";
+
+    } else if ($_GET('FromWebApp') && ($_GET('FromWebApp') == true || $_GET('FromWebApp') == 'true')) {
+
+        browserType = "FromWebApp";
+
+    } else if ($('html').hasClass('mobile')) {
+
+        // Mobile
+        browserType = "Mobile";
+
+    } else {
+
+        // Probably Desktop
+        browserType = "Desktop";
+
+    }
+
+    mixpanel.identify(propriet['Member ID']);
+
+    mixpanel.register({
+        "Interface": propriet['Interface'],
+        "UTM Term [Last Touch]": propriet['UTM Term [Last Touch]'],
+        "UTM Content [Last Touch]": propriet['UTM Content [Last Touch]'],
+        "UTM Campaign [Last Touch]": propriet['UTM Campaign [Last Touch]'],
+        "UTM Medium [Last Touch]": propriet['UTM Medium [Last Touch]'],
+        "UTM Source [Last Touch]": propriet['UTM Source [Last Touch]'],
+        "CRM Segment": propriet['CRM Segment'],
+        "# of Completed Purchases": propriet['# of Completed Purchases'],
+        "Member ID": propriet['Member ID'],
+        "Optimizely Current A\/B Tests": propriet['Optimizely Current A\/B Tests'],
+        "Source": propriet['Source'],
+        "Point Reached On Homepage": propriet['Point Reached On Homepage']
+    });
+
+    mixpanel.track("View B2B mini website",{
+        "Operation Code": "{{ config.operation.code }}",
+        "Device width": window.innerWidth,
+        "Device height": window.innerHeight,
+        "Browser type": browserType
+    });
+
+
+</script>
+
+<script src="js/app.js"></script>

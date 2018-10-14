@@ -1,0 +1,508 @@
+.scroool {
+  margin-top: 20px;
+}
+
+.fancybox-slide > * {
+  padding: 0;
+}
+
+.fancybox-close-small {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+.from {
+  margin-top: 2rem;
+  text-align: center;
+
+  &__text {
+    color: $c-theme;
+    font-family: $t-text;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+
+  &__btn {
+    margin: 30px auto;
+    background: white;
+    padding: 15px 0;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    color: $c-theme2;
+    font-family: $t-text;
+    font-style: italic;
+    font-size: rem(15px);
+    border: 1px solid $c-theme2;
+    width: 90%;
+
+    @include breakpoint($b-desk) {
+      width: 400px;
+    }
+  }
+
+  &__close {
+    @extend .hide;
+  }
+
+  &__plus, &__close {
+    vertical-align: middle;
+    margin-left: 20px;
+    width: 30px;
+    height: 30px;
+  }
+
+  &__select {
+    @extend .hide;
+
+    text-align: center;
+    border-radius: 10px;
+    max-height: 90%;
+    overflow-y: auto;
+    width: 90%;
+
+    @include breakpoint($b-desk) {
+      width: 50%;
+    }
+
+    .from__btn {
+      border: none;
+      width: auto;
+      margin: auto;
+    }
+
+    &-city {
+      font-family: $t-text;
+      font-size: rem(16px);
+      padding: 10px 0;
+      border-top: 1px solid $c-theme;
+      cursor: pointer;
+
+      &:hover {
+        background: #e24039;
+        color: white;
+      }
+    }
+  }
+}
+
+.destinations {
+  overflow: hidden;
+  margin: 35px auto;
+  max-width: 1200px;
+}
+
+.destination {
+  margin-bottom: 1px;
+  position: relative;
+  color: white;
+
+  @include breakpoint($b-desk) {
+    width: calc(50% - 0.5px);
+    float: left;
+
+    &:nth-child(odd) {
+      margin-right: 1px;
+    }
+  }
+
+  &__overlay {
+    @extend .hide;
+
+    width: 90%;
+
+    @include breakpoint($b-desk) {
+      width: 700px;
+    }
+  }
+
+  &__mea {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  &__title {
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    font-family: $t-text;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: rem(25px);
+
+    @include breakpoint($b-desk) {
+      font-size: rem(35px);
+    }
+  }
+
+  &__price {
+    display: block;
+    font-weight: bold;
+    text-transform: initial;
+    font-size: rem(16px);
+
+    @include breakpoint($b-desk) {
+      font-size: rem(18px);
+    }
+  }
+
+  &__plus {
+    position: absolute;
+    right: 35px;
+    bottom: 35px;
+    width: 50px;
+    height: 50px;
+    background: $c-theme2;
+    border: 2px solid white;
+    border-radius: 50%;
+    text-align: center;
+    display: table;
+    cursor: pointer;
+
+    span {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}
+
+.destination-in {
+  color: white;
+  position: relative;
+
+  &__overlay {
+    @extend .hide;
+  }
+
+  &__mea {
+    display: block;
+    width: 100%;
+  }
+
+  &__title {
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    font-family: $t-text;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: rem(25px);
+
+    @include breakpoint($b-desk) {
+      font-size: rem(35px);
+    }
+  }
+
+  &__price {
+    display: block;
+    font-weight: bold;
+    font-size: rem(20px);
+
+    @include breakpoint($b-desk) {
+      font-size: rem(25px);
+    }
+  }
+
+  &__plus {
+    position: absolute;
+    right: 35px;
+    bottom: 35px;
+    width: 50px;
+    height: 50px;
+    background: $c-theme2;
+    border: 2px solid white;
+    border-radius: 50%;
+    text-align: center;
+    display: table;
+    cursor: pointer;
+
+    span {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}
+
+.destination__city {
+  position: relative;
+  color: white;
+
+  &__mea {
+    display: block;
+    width: 100%;
+  }
+
+  &__title {
+    position: absolute;
+    background: rgba($c-theme2, .9);
+    top: 35px;
+    left: 0px;
+    padding: 20px 35px;
+    font-family: $t-text;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: rem(25px);
+    border-radius: 0 15px 15px 0;
+
+    @include breakpoint($b-desk) {
+      font-size: rem(35px);
+    }
+  }
+
+  &__price {
+    display: block;
+    font-weight: bold;
+    font-size: rem(20px);
+
+    @include breakpoint($b-desk) {
+      font-size: rem(25px);
+    }
+  }
+
+  &__plus {
+    position: absolute;
+    right: 35px;
+    bottom: 35px;
+    width: 50px;
+    height: 50px;
+    background: $c-theme2;
+    border: 2px solid white;
+    border-radius: 50%;
+    text-align: center;
+    display: table;
+    cursor: pointer;
+
+    span {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}
+
+.mask {
+  .masked {
+    display: block;
+    transition: all ease .5s;
+    opacity: 1;
+  }
+}
+
+.masked {
+  display: none;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background: rgba(white, .5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.city {
+  position: relative;
+
+  &__overlay {
+    @extend .hide;
+
+    width: 90%;
+
+    @include breakpoint($b-desk) {
+      width: 700px;
+    }
+  }
+
+  &__partner {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+    &-txt {
+      font-family: $t-text;
+      color: white;
+      text-transform: uppercase;
+      font-size: rem(20px);
+      strong {
+        display: block;
+        text-transform: none;
+      }
+    }
+  }
+
+  &__intro {
+    display: table;
+    table-layout: fixed;
+    width: 90%;
+    margin: 30px auto;
+    &::after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: " ";
+      clear: both;
+      height: 0;
+    }
+    @include breakpoint($b-desk) {
+      display: block;
+      table-layout: auto;
+    }
+  }
+
+  &__info {
+    float: none;
+    display: table-cell;
+    vertical-align: top;
+    @include breakpoint($b-desk) {
+      display: block;
+      float: left;
+    }
+  }
+
+  &__price {
+    float: right;
+    background: $c-theme;
+    display: table;
+    color: white;
+    font-size: rem(20px);
+    font-family: $t-text;
+    font-weight: 300;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+
+    &-number {
+      font-size: rem(10px);
+      margin-bottom: rem(18px);
+      @include breakpoint($b-tab) {
+        font-size: rem(14px);
+      }
+      span {
+        margin-top: 1rem;
+        font-size: rem(18px);
+        font-weight: bold;
+        @include breakpoint($b-tab) {
+          font-size: rem(35px);
+        }
+      }
+    }
+    &--1, &--2 {
+      display: table-cell;
+      width: 45%;
+      span {
+        display: block;
+      }
+    }
+    &--1 {
+      padding-right: rem(5px);
+      border-right: 1px solid white;
+    }
+    &--2 {
+      padding-left: rem(5px);
+    }
+  }
+
+  &__name {
+    font-size: rem(14px);
+    font-family: $t-text;
+    font-weight: bold;
+    @include breakpoint($b-tab) {
+      font-size: rem(23px);
+    }
+  }
+
+  &__date {
+    font-size: rem(12px);
+    font-family: $t-text;
+    font-weight: 300;
+    @include breakpoint($b-tab) {
+      font-size: rem(20px);
+    }
+  }
+
+  &__text {
+    width: 90%;
+    margin: 0 auto 20px;
+    color: #555;
+    font-family: $t-text;
+    font-size: rem(12px);
+    clear: both;
+    @include breakpoint($b-tab) {
+      font-size: rem(18px);
+    }
+  }
+
+  &__bandeau {
+    //filter: blur(5px)
+    width: 100%;
+  }
+
+  &__picture {
+    text-align: center;
+    width: 90%;
+    margin: auto;
+
+    &-img {
+      width: 32.3%;
+      margin: 10px .5%;
+    }
+  }
+
+  &__footer {
+    width: 100%;
+    background: $c-theme;
+    color: white;
+    font-family: $t-text;
+    font-weight: 300;
+    padding: 20px 0;
+    font-size: rem(20px);
+    text-align: center;
+
+    &__text {
+      color: $c-theme;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: rem(14px);
+      @include breakpoint($b-tab) {
+        letter-spacing: 3px;
+        font-size: rem(20px);
+      }
+    }
+
+    &__other, &__other2 {
+      display: block;
+      color: white;
+      margin: 15px 0;
+      font-size: rem(16px);
+      @include breakpoint($b-tab) {
+        font-size: rem(20px);
+      }
+    }
+
+    &__other2 {
+      text-transform: uppercase;
+    }
+
+    &__btn {
+      background: white;
+      text-transform: uppercase;
+      font-family: $t-text;
+      color: $c-theme;
+      font-size: rem(25px);
+      padding: .5rem 1rem;
+      border-radius: 10px;
+      margin: auto;
+      cursor: pointer;
+      display: inline-block;
+      text-align: center;
+      width: 40%;
+    }
+  }
+}

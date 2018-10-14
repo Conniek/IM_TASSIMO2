@@ -1,0 +1,10 @@
+.tooltip {
+  background: orange !important;
+  color: $c-texte !important;
+  border: dashed 5px yellow !important;
+
+  &--img {
+    display: block;
+    border: dashed 5px yellow !important;
+  }
+}

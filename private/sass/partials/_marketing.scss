@@ -1,0 +1,132 @@
+.marketing {
+
+    &__wrapper {
+        @include clearfix;
+        padding: 20px;
+        background-color: #f5f5f5;
+        text-align: center;
+        color: $c-theme;
+        font-family: $t-Clarins-Regular;
+        /*-webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow:    0px 0px 10px 0px rgba(50, 50, 50, 0.75);
+        box-shadow:         0px 0px 10px 0px rgba(50, 50, 50, 0.75);*/
+
+        &.fixed {
+            position: fixed;
+            bottom: 0;
+            z-index: 11;
+            width: 100%;
+        }
+
+        &.in-header {
+            position: static !important;
+        }
+    }
+
+    &__inner {
+        max-width: 80%;
+        margin: auto;
+        position: relative;
+
+        @include breakpoint($b-tab-desk) {
+            max-width: 60%;
+        }
+        @include breakpoint($b-desk) {
+            max-width: 60%;
+        }
+    }
+
+    &__txt {
+        text-transform: uppercase;
+        @include breakpoint($b-tab-desk) {
+            display: inline-block;
+            margin-right: 30px;
+            width: 40%;
+            position: relative;
+        }
+        @include breakpoint($b-tab-ipad) {
+            width: 58%;
+        }
+
+        &--1 {
+            font-family: $Gotham-Black;
+            font-size: rem(20px);
+            letter-spacing: 3px;
+            font-style: normal;
+            display: block;
+            color: #ce608d;
+            line-height: 40px;
+            text-align: right;
+
+            @include breakpoint($b-tab-desk) {
+                font-size: rem(20px);
+            }
+
+            @include breakpoint($b-mob) {
+                font-size: rem(17px);
+                text-align: center;
+            }
+            &:after{
+
+            }
+        }
+
+        &--2 {
+            font-family: $Gotham-Bold;
+            font-size: rem(15px);
+            font-style: normal;
+            display: block;
+            line-height: 22px;
+            text-align: right;
+
+            .red{
+                color: #ce608d;
+            }
+
+            @include breakpoint($b-tab-desk) {
+                font-size: rem(16px);
+            }
+            @include breakpoint($b-mob) {
+                font-size: rem(12px);
+                text-align: center;
+            }
+        }
+
+        &--3 {
+            clear: both;
+            font-size: rem(12px);
+            margin-bottom: 10px;
+
+            @include breakpoint($b-tab-desk) {
+                font-size: rem(13px);
+                padding-top: 10px;
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    &__cta {
+        width: 100%;
+        padding: 26px 25px 26px;
+        margin-top: 5px;
+        font-size: rem(18px);
+        font-family: $Gotham-Bold;
+
+
+        @include breakpoint($b-tab-desk) {
+            width: 36%;
+        }
+        @include breakpoint($b-tab-ipad) {
+            width: 35%;
+            font-size: rem(16px);
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        @include breakpoint($b-mob) {
+            padding: 16px 45px 16px;
+        }
+
+        
+    }
+}
