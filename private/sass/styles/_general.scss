@@ -782,6 +782,12 @@ overflow-x: hidden;
         }
       }
 
+      &--3 {
+        img {
+              width: 127px;
+        }
+      }
+
       &_title{
         font-size: rem(18px);
         font-family: $Gotham-Bold;

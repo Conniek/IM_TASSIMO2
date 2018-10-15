@@ -11,7 +11,7 @@ module.exports = {
     },
     "exclusivite": {
         "title": "exclusivité vente-privEe",
-        "parg": "PENDANT <span class='red'>48H </span>ET <span class='red'>POUR LES MEMBRES VENTE-PRIVEE UNIQUEMENT,</span><br> tassimo VOUS OFFRE<br> <strong class='red'>30% DE RÉDUCTION IMMÉDIATE<sup>*</sup></strong><br> POUR TOUTES LES COMMANDES de T-discs EFFECTUÉES SUR LE SITE<br> <a class=\"event \" data-label=\":tassimo FR\" data-event=\"TagEvent::Exit\" target=\"_blank\" href=\"http://tassimo.fr\">tassimo.FR</a><br> <b>AVEC LE CODE</b>",
+        "parg": "PENDANT <span class='red'>48H </span>ET <span class='red'>POUR LES MEMBRES VENTE-PRIVEE UNIQUEMENT,</span><br> tassimo VOUS OFFRE<br> <strong class='red'>30% DE RÉDUCTION IMMÉDIATE<sup>*</sup></strong><br> POUR TOUTES LES COMMANDES de T-discs EFFECTUÉES SUR LE SITE<br> <a class=\"event \" data-label=\":tassimo FR\" data-event=\"TagEvent::Exit\" target=\"_blank\" href=\"http://tassimo.fr\">tassimo.FR</a><br> du 26/10 au 28/10 à 8h <b>AVEC LE CODE</b>",
         "url": "#",
         "cta": "tassimoprivee",
     },
@@ -166,6 +166,6 @@ module.exports = {
         "generic": "http://bit.ly/2sLt96l",
     },
     "mentions": {
-        "txt": "<sup>**</sup>Offre valable du 09 juin 2018 au 10 juin 2018 exclusivement pour les membres vente-privée.<br/> La réduction s'applique à partir de 50€ de commande sur tous les T-discs.",
+        "txt": "<sup>**</sup>Offre valable du du 26 octobre 2018 au 28 octobre 2018 exclusivement pour les membres vente-privée.<br/> La réduction s'applique à partir de 50€ de commande sur tous les T-discs.",
     }
 };

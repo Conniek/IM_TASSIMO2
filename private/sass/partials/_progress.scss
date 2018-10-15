@@ -3,8 +3,8 @@
 $size: 180px;
 $borderWidth: 18px;
 $animationTime: 2s;
-$border-color-default: #dc962a;
-$border-color-fill: #e5b239;
+$border-color-default: #e5b239;
+$border-color-fill: #dc962a;
 
 @include breakpoint($b-desk) {
   $size: 230px;
