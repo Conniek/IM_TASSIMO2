@@ -19,11 +19,15 @@
             <button  id='work' type="button" name="{{ trad.intro.cta }}" class="intro__container--btn button bottom event scrollTo" data-scroll=".screen--1" data-event="TagEvent::Page" data-label="intro :: {{ trad.intro.cta }}" >{{ trad.intro.cta }}</button>
         </div>
         <div class="intro__container--right desktop-only">
-            <div class="pack">
-                <img src="./img/bloc1/1-OrClassique.png" class="pack__item--1 pack__item  animated fadeInRight" alt="Or Classique">
-                <img src="./img/bloc1/2-Milka.png"       class="pack__item--2 pack__item  animated fadeInLeft" alt="Milka">
-                <img src="./img/bloc1/3-CafeLong.png"    class="pack__item--3 pack__item  animated fadeInLeft" alt="Cafe Long">
-                <img src="./img/bloc1/4-Twinings.png"    class="pack__item--4 pack__item  animated fadeInLeft" alt="Twinings">
+            <div class="SwipePack">
+                <div class="row swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="background-image:url(./img/bloc1/1-OrClassique.png)"></div>
+                        <div class="swiper-slide" style="background-image:url(./img/bloc1/2-Milka.png)"></div>
+                        <div class="swiper-slide" style="background-image:url(./img/bloc1/3-CafeLong.png)"></div>
+                        <div class="swiper-slide" style="background-image:url(./img/bloc1/4-Twinings.png)"></div>
+                    </div>
+                </div>
             </div>
             <img src="./img/bloc1/tasse.png"    alt="tasse" class="tasse item-abs animated fadeInRight" />
             <img src="./img/bloc1/Suchards.png" alt="suchards" class="suchards item-abs  fadeInRight animated" />

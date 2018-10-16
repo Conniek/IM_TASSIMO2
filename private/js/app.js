@@ -12,8 +12,8 @@ import VP from './functions/vpLogin';
 import devTool from './functions/devTool'
 import tooltips from './functions/tooltips'
 import marketing from './functions/marketing'
-import header from './functions/header'
 import travel from "./functions/travel";
+import swiper from "./functions/swiper";
 
 $(function () {
 

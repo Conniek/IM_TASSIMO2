@@ -20,7 +20,8 @@ module.exports = {
         "waypoints": true,
         "slick": true,
         "adotmob": true,
-        "fancybox": true
+        "fancybox": true,
+        "swiper": true
     },
     "operation": {
         "code": "IM_TASSIMO1",

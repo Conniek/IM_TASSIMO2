@@ -209,7 +209,7 @@
       z-index: 11;
 
       @include breakpoint($b-desk) {
-        max-width: 58%;
+        max-width: 51%;
         width: 64%;
         margin: auto;
       }
@@ -423,11 +423,10 @@
 }
 
 .tasse {
-  top: 236px;
+  top: 286px;
   width: auto;
   right: 40px;
   z-index: 5;
-  animation-delay: 3s;
   animation-duration: 2.5s;
    @include breakpoint($b-tab-desk) {
       right: 0px;
@@ -439,9 +438,9 @@
   z-index: 5;
   width: 237px;
   z-index: 5;
-  top: 330px;
+  top: 360px;
   left: 80px;
-  animation-delay: 5s;
+  animation-delay: 1s;
   animation-duration: 1.5s;
      @include breakpoint($b-tab-desk) {
       width: 220px;
@@ -454,11 +453,11 @@
   width: 167px;  
   left: -60px;
   z-index: 5;
-  animation-delay: 6s;
+  animation-delay: 1.5s;
   animation-duration: 1.5s;
     @include breakpoint($b-tab-desk) {
       width: 150px;
-      top: 327px;
+      top: 340px;
       left: -70px;
     } 
 }

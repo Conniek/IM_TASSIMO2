@@ -29,10 +29,10 @@
         position: relative;
 
         @include breakpoint($b-tab-desk) {
-            max-width: 60%;
+            max-width: 100%;
         }
         @include breakpoint($b-desk) {
-            max-width: 60%;
+            max-width: 100%;
         }
     }
 
@@ -45,7 +45,7 @@
             position: relative;
         }
         @include breakpoint($b-tab-ipad) {
-            width: 58%;
+            width: 60%;
         }
 
         &--1 {
@@ -115,13 +115,14 @@
 
         @include breakpoint($b-tab-desk) {
             width: 36%;
+            max-width: 250px;
         }
         @include breakpoint($b-tab-ipad) {
-            width: 35%;
+            width: 26%;
             font-size: rem(16px);
             position: relative;
             top: 50%;
-            transform: translateY(-50%);
+            transform: translateY(0);
         }
         @include breakpoint($b-mob) {
             padding: 16px 45px 16px;
