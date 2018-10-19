@@ -29,6 +29,7 @@ overflow-x: hidden;
     flex-direction: column;
     margin: 20px auto;
     padding: 20px;
+    padding-bottom: 40px;
 
     @include breakpoint($b-tab){
       flex-direction: row;
@@ -1223,7 +1224,7 @@ overflow-x: hidden;
   .slick-dots {
     left: 50%;
     transform: translate(-50%, -50%);
-    bottom: 12px;
+    bottom: 0px;
 
     @include breakpoint($b-desk) {
       bottom: -10px;
