@@ -163,7 +163,7 @@
 
   @include breakpoint($b-desk) {
     height: 58vh;
-    min-height: 580px;
+    min-height: 700px;
   }
 
   @include breakpoint($b-xlarge) {
@@ -230,7 +230,7 @@
     }
     &--title{
       font-family: 'Grota Sans Rd Black';
-      color: #bacc35;
+      color: #b5da25;
       font-weight: normal;
       font-size: rem(25px);
       text-transform: uppercase;
@@ -247,8 +247,8 @@
     }
 
     &--tag {
-      background-color: #bacc35;
-      font-family: $Gotham-Bold;  
+      background-color: #b5da25;
+      font-family: $Grota-Bold;  
       color: #FFF;
       font-size: rem(22px);
       letter-spacing: 0.35rem;

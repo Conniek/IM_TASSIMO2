@@ -76,13 +76,13 @@ module.exports = {
                     "color": "#e31b24",
                 },
                 {
-                    "title": "MILKA",
+                    "title": "MILKA<br> <em>Chocolat</em>",
                     "img": "product_3.png",
                     "url": "http://bit.ly/2JfTfWr",
                     "color": "#776cb1",
                 },
                 {
-                    "title": "thé vert <br> <em>Twinings</em>",
+                    "title": "Twinings <br> <em>thé vert</em>",
                     "img": "product_4.png",
                     "url": "http://bit.ly/2JrfP1v",
                     "color": "#a5c538",
