@@ -578,6 +578,9 @@ overflow-x: hidden;
 
 .SwipePack{
   height: 410px;
+  &--mobile {
+    height: 160px;
+  }
 }
       
 

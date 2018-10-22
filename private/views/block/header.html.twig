@@ -15,9 +15,20 @@
             </div>
             <h1 class="intro__container--title">{{ trad.intro.accroche }}</h1>
             <div class="intro__container--tag">{{ trad.intro.tag }}</div>
+            <div class="SwipePack--mobile">
+                <div class="row swiper-container mob-only">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="background-image:url(./img/bloc1/4-Twinings.png)"></div>
+                        <div class="swiper-slide" style="background-image:url(./img/bloc1/3-CafeLong.png)"></div>
+                        <div class="swiper-slide" style="background-image:url(./img/bloc1/2-Milka.png)"></div>
+                        <div class="swiper-slide" style="background-image:url(./img/bloc1/1-OrClassique.png)"></div>
+                    </div>
+                </div>
+            </div>
             <img class="intro__container--right no-desktop" src="./img/product-small.png" alt="" >
             <button  id='work' type="button" name="{{ trad.intro.cta }}" class="intro__container--btn button bottom event scrollTo" data-scroll=".screen--1" data-event="TagEvent::Page" data-label="intro :: {{ trad.intro.cta }}" >{{ trad.intro.cta }}</button>
         </div>
+
         <div class="intro__container--right desktop-only">
             <div class="SwipePack">
                 <div class="row swiper-container">
